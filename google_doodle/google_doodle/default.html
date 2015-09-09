@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Javascript Doodle Uygulaması</title>
+
+
+    <link href="css/bootstrap.css" rel="stylesheet" />
+
+    <style>
+
+        #rsm{            
+            margin-left:60%;
+        }
+
+        #msj{
+            text-align:center;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+        }
+
+    </style>
+
+
+    <script>
+        //javascript newdate sistemin tarihini al diziyle karşılaştır
+            
+
+        function tarih() {
+
+            var tarih1 = new Array('15.3.2015','23.3.2015','19.5.2015','9.11.2015','10.11.2015');
+
+
+            
+                //alert(tarih1)
+
+            //Sistem den Ayın günü'nü al
+            
+            var gun = new Date()
+            var day = gun.getDate()
+
+            //alert(gun.getDate().toString())
+
+            var ay = new Date()
+            var month = ay.getMonth()
+
+            //alert(ay.getMonth().toString())
+
+            var yil = new Date()
+            var year = yil.getFullYear()
+
+            //alert(yil.getFullYear().toString());
+
+            var s_tarih=(day+"."+month+"."+year);
+
+            //alert(s_tarih);
+
+            for(var i in tarih1){
+                //alert(tarih1[4]);
+            //simdi indis sırasına göre resimleri diz.
+
+                if (s_tarih == tarih1[0]) {
+                    //alert("Tarihler Eşleşti :)");                        
+                    document.getElementById("msj").innerHTML = "Mimar Sinan'nın Doğum Günü";                    
+                    document.getElementById("rsm").src = "img/04.jpg";                       
+                        break;
+
+
+                    }if(s_tarih==tarih1[1]){                      
+                       
+                        document.getElementById("msj").innerHTML = "23 Nisan Çocuk Bayramı";                        
+                        document.getElementById("rsm").src = "img/03.jpg";
+                        
+                        break;
+
+                       
+                } if (s_tarih == tarih1[2]) {
+                   
+                    document.getElementById("msj").innerHTML = "Nelson Mandella";
+                    document.getElementById("rsm").src = "img/05.png";
+                    break;
+
+                    } if (s_tarih == tarih1[3]) {
+                        
+                        document.getElementById("msj").innerHTML = "Grace Hopper Doğum Günü";
+                        document.getElementById("rsm").src = "img/01.jpg";
+                        break;
+
+                } if (s_tarih == tarih1[4]) {
+                    
+                    document.getElementById("msj").innerHTML = "Ada Lovelace Doğum Günü";
+                    document.getElementById("rsm").src = "img/02.jpg";
+                    break;
+
+                } else {
+                    
+                    alert("Farklı Bir Tarih Dilimi Özel Bir Olay Olmadı");
+                    break;
+                }
+
+
+
+
+            }//for kapanış !!!
+
+
+            
+            
+
+
+
+
+            //dizi tnmlanacak sonra s_tarih ile karşılaştırıcan**
+            //eğer true döner ise alert ile msj versin değilse false versin**
+
+         
+
+            ///--------
+
+
+            //şimdi ise 4 tane daha tarih oluştur dongule hepsi içinde dolaşıcan 
+            //sistem tarihi ile dizi tarihi eşleşir ise alert ile msj ver 
+
+
+            //javascript içerisine html yazma dinamik şkl de olcak
+        }
+        
+
+
+
+    </script>
+</head>
+<body onload="tarih()">
+            <div class="jumbotron">
+                <h3 style="text-align:center">Google Doodle Javascript Uygulaması</h3>
+            </div>    
+
+   
+
+    <form method="get">
+
+        <div class="container">
+
+            <div class="row" style="border:1px solid; width:900px;height:300px; ">
+
+                <div class="col-sm-6 col-md-3">
+
+                    
+                    
+
+                    <img id="rsm"/>
+                    
+
+                </div>
+
+              
+                
+            </div>
+           
+            <h3 id="msj"></h3>
+            <p id="icrk"></p>
+           
+        </div>
+
+
+    </form>
+
+   
+
+   <script src="js/jquery-1.11.2.min.js"></script>
+   <script src="js/bootstrap.js"></script>
+</body>
+</html>
